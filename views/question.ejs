@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <%- include('partials/navbar'); %>
+
+  <div class="container">
+
+    <!-- Enunciado da pergunta -->
+    <hr>
+    <h1><%= question.titulo %> </h1>
+    <p><%= question.descricao %></p>
+    <hr>
+
+    <!-- Formulário de resposta -->
+    <form action="/answer" method="POST">
+      <h3>Responda</h3>
+      <label>Resposta</label>
+      <textarea name="corpo" class="" cols="30" rows="10" placeholder="Digite a sua resposta..."></textarea>
+      <input name="question" type="hidden" value="<%= question.id %>">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Responder
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+
+    <!-- Exibir todas as respostas já feitas -->
+    <hr>
+    <h1>Respostas </h1>
+    <hr>
+    <% respostas.forEach(resposta => { %>
+    <div class="card white">
+      <div class="card-content">
+        <p><%= resposta.corpo %></p>
+      </div>
+    </div>
+    <% }) %>
+
+  </div>
+
+  <%- include('partials/footer-scripts'); %>
+
+</body>
+
+</html>

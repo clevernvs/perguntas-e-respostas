@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+  <%- include('partials/head'); %>
+</head>
+
+<body>
+  <%- include('partials/navbar'); %>
+
+  <hr>
+  <h3>Perguntas</h3>
+  <hr>
+  <a class="waves-effect waves-light btn-large lime lighten-2" href="/page-ask">Perguntar</a>
+
+  <div class="container">
+
+    <% perguntas.forEach(pergunta => { %>
+    <div class="card white">
+      <div class="card-content">
+        <h4><%= questions.titulo %></h4>
+        <p><%= questions.descricao %></p>
+        <a class="waves-effect waves-light btn-small" href="/question/<%= question.id%>">Responder</a>
+      </div>
+    </div>
+    <% }) %>
+
+  </div>
+
+  <%- include('partials/footer-scripts'); %>
+
+</body>
+
+</html>

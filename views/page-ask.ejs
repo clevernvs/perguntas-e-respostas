@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head'); -%>
+</head>
+
+<body>
+
+  <%- include('partials/navbar'); %>
+
+  <div class="container">
+
+    <div class="row center ">
+      <h3>Faça a sua pergunta: </h3>
+    </div>
+
+    <div class="card white m6">
+
+      <div class="card-content">
+
+        <form class="col s1" method="POST" action="/save-ask">
+          <div class="input-field col s6">
+
+            <i class="tiny material-icons prefix">mode_edit</i>
+            <input type="text" placeholder="Título" name="titulo">
+          </div>
+          <div class="input-field col s6">
+            <i class="tiny material-icons prefix">message</i>
+            <textarea name="" id="" class="materialize-textarea" cols="30" rows="10"
+              placeholder="Digite a sua pergunta aqui..." name="descricao"></textarea>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+  <%- include('partials/footer-scripts'); %>
+
+</body>
+
+</html>
